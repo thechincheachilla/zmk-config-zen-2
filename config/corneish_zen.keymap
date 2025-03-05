@@ -4,8 +4,8 @@
 
 / {
   chosen {
-    zmk,matrix_transform = &default_transform;
-    //zmk,matrix_transform = &five_column_transform;
+    zmk,physical-layout = &foostan_corne_6col_layout;
+    //zmk,physical-layout = &foostan_corne_5col_layout;
   };
 };
 
@@ -14,9 +14,9 @@
                 compatible = "zmk,keymap";
 
                 default_layer {
-                        label = "QWERTY";
+                        display-name = "QWERTY";
 // -----------------------------------------------------------------------------------------
-// |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BKSP |
+// |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BSPC |
 // | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
 // | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  |  \   |
 //                    |CTRL | L2  | L1  |   | L3  | SPC  | ENT |
@@ -28,7 +28,7 @@
                         >;
                 };
                 lower_layer {
-                        label = "NUMBER";   
+                        display-name = "NUMBER";   
 // -----------------------------------------------------------------------------------------
 // |      |     |     |     |     |     |   | {[  | }]  | +=  | -_  |  `  |  DEL |
 // |      |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  |      |
@@ -43,7 +43,7 @@
                 };
 
                 raise_layer {
-                        label = "ARROWS";
+                        display-name = "ARROWS";
 // -----------------------------------------------------------------------------------------
 // |      |     |     |     |     |     |   |     |     | UP  |     |     |      |
 // |      |     |     |     |     |     |   |     | LFT | DWN | RGHT|     |      |
@@ -62,12 +62,12 @@
 // -----------------------------------------------------------------------------------------
 // | F12  |  F1 |  F2 |  F3 |  F4 |  F5 |   |  F6 |  F7 |  F8 |  F9 | F10 | F11  |
 // | WIN  |     |     |     |     |     |   | BT1 | BT2 | BT3 | BT4 | BT5 |BTCLR |
-// | PRINT|     |     |     |     |     |   |     |     |     |     |     |      |
+// | PRINT|     |     |     |     |     |   |     |     |     |     |     |STUDIO|
 //                    | CTRL| ALT | CAPS|   |     |     |     |
                         bindings = <
    &kp F12   &kp F1  &kp F2  &kp F3  &kp F4  &kp F5  &kp F6  &kp F7  &kp F8  &kp F9  &kp F10  &kp F11
    &kp LWIN  &trans  &trans  &trans  &trans  &trans  &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &bt BT_CLR
-   &kp PSCRN &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans   &trans
+   &kp PSCRN &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans   &studio_unlock
                              &kp LCTRL  &kp LALT  &kp CAPS  &trans  &trans  &trans
                         >;
                 };
